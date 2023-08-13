@@ -38,7 +38,7 @@ public class ChatBotService {
             messageList.put(message);
         });
 
-        payload.put("model", settingsModel.getModel()); // model is important
+        payload.put("model", settingsModel.getModel());
         payload.put("messages", messageList);
         payload.put("temperature", settingsModel.getTemperature());
 
