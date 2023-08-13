@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments::head}"></head>
+<body onload="window.klopfdreh.prompt()">
+    <nav th:replace="~{fragments::nav}"></nav>
+    <main class="container pt-3">
+        <form th:action="@{/promptRest}" th:object="${promptModel}" method="post" id="promptForm">
+            <div class="mb-3">
+                <label for="promptInput" class="form-label">Prompt Input</label>
+                <textarea class="form-control" id="promptInput" rows="3" th:field="*{input}"></textarea>
+            </div>
+            <div class="mb-3">
+                <div class="col-auto">
+                    <button type="button" id="recognitionToggle" class="btn btn-primary mb-3 rt-disabled">Start prompting</button>
+                    <button type="button" id="clearChat" class="btn btn-primary mb-3">Clear chat</button>
+                </div>
+            </div>
+            <div class="mb-3" id="promptChat">
+            </div>
+            <div class="mb-3">
+                Note: If you pressed the "Start prompting" button please wait 1-2 seconds
+            </div>
+        </form>
+    </main>
+    <footer th:replace="~{fragments::footer}"></footer>
+    <script th:src="@{/js/prompt.js}"></script>
+    <div th:replace="~{fragments::scripts}"></div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+klopfdreh:
+  ai-test:
+    url: "https://api.openai.com/v1/chat/completions"
+    role: "user"
+    model: "gpt-3.5-turbo"
+    temperature: 0.7f
